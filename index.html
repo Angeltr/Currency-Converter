@@ -1,0 +1,80 @@
+<html>
+ <body style="background-color:DarkCyan;">
+  <h1 style="text-align:center;color:black;"><b>Currency Converter</b></h1><br />
+
+<script type="text/javascript">
+
+ function checkform(form) {
+	if(form.amount.value=="") {
+		 alert("Please enter amount");
+		 return false;
+              }
+	else if(form.amount.value<0) {
+		 alert("Please enter positive amount");
+ 		 return false;
+	      }
+	else if(isNaN(form.amount.value)==true) {
+		alert("Please enter a number");
+ 		return false;
+	      }
+	else if(form.from.value=="") {
+		alert("Please enter \"From\" currency");
+		return false;
+	      }
+	else if(form.to.value=="") {
+		alert("Please enter \"To\" currency");
+		return false;
+	      }
+
+	return true;
+	}
+</script>
+
+<form style="text-align:center;" method=”GET” action="http://texwww.inf.uth.gr:8080/~agtrigka/Convert.do" onsubmit="return checkform(this);">
+
+From: 
+   <select name="from">
+     <option value>Select a currency</option>
+     <option value="ARS">Argentin Peso</option>
+     <option value="GBP">British Pound</option>
+     <option value="EUR">Euro</option>
+     <option value="CNY">Chinese Yuan</option>
+     <option value="RUB">Russian Ruble</option>
+     <option value="CHF">Swiss Franc</option>
+     <option value="USD">US Dollar</option>
+
+   </select><br />
+
+
+To :
+   <select name="to">
+     <option value>Select a currency</option>
+     <option value="ARS">Argentin Peso</option>
+     <option value="GBP">British Pound</option>
+     <option value="EUR">Euro</option>
+     <option value="CNY">Chinese Yuan</option>
+     <option value="RUB">Russian Ruble</option>
+     <option value="CHF">Swiss Franc</option>
+     <option value="USD">US Dollar</option>
+
+   </select><br />
+
+Amount: <input type="text" name="amount" /><br />
+
+	<input type="submit" value="Convert"><br />
+
+</form>
+
+<form style="text-align:center;" method=”GET” action="Help.do">
+	<input type="submit" value="help" title="Click here for information about the  Currency Converter">
+</form>
+ 
+<form style="text-align:center;" method=”GET” action="Code.do">
+	<input type="submit" value="Code" title="Click here to get the code">
+</form>
+ 
+
+
+ </body>
+</html>
+
